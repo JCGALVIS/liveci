@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Google Calendar API Quickstart</title>
+    <meta charset='utf-8' />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        .embed-container {
+            position: relative;
+            height: 0;
+            overflow: hidden;
+            padding-bottom: 118%;
+        }
+        .embed-container iframe {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-messaging.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav();
+
+        })
+
+        function abrirOpcion(that){
+            var url = that.attr('url');
+
+            $('#ifrMarco').attr('src', url);
+        }
+    </script>
+    
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCCqLzwVg0b9JyTMFiHZRVQlKWGAyLU2z8",
+    authDomain: "live-ci-197101.firebaseapp.com",
+    databaseURL: "https://live-ci-197101.firebaseio.com",
+    projectId: "live-ci-197101",
+    storageBucket: "live-ci-197101.appspot.com",
+    messagingSenderId: "466116677253"
+  };
+  firebase.initializeApp(config);
+</script>
+</head>
+
+<body>
+    <nav style="background-color: #43a047;">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">LIVE-CI</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a url="procesos/reserva/registroReserva.html" onclick="abrirOpcion($(this))">Reserva</a></li>
+                <li><a url="procesos/usuarios/registroUsuario.html" onclick="abrirOpcion($(this))">Resgistro de usuarios</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a url="procesos/reserva/registroReserva.html" onclick="abrirOpcion($(this))">Reserva</a></li>
+                <li><a url="procesos/usuarios/registroUsuario.html" onclick="abrirOpcion($(this))">Resgistro de usuarios</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="embed-container">
+        <iframe id="ifrMarco" frameborder="0" allowfullscree></iframe>
+    </div>
+</body>
+
+</html>
